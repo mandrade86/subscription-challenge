@@ -1,31 +1,31 @@
-# 🚀 Live Coding Challenge - Sistema de Suscripciones
+# 🚀 Live Coding Challenge - Subscription System
 
-## 📋 **Instrucciones para el Candidato**
+## 📋 **Instructions for the Candidate**
 
-Tienes **1 hora** para crear un sistema de gestión de suscripciones desde cero. Este challenge evalúa tus habilidades como **Senior Fullstack Developer**.
+You have **1 hour** to create a subscription management system from scratch. This challenge evaluates your skills as a **Senior Fullstack Developer**.
 
-## 🎯 **Objetivos del Challenge**
+## 🎯 **Challenge Objectives**
 
-### **Backend (30 minutos)**
-- [ ] **API RESTful** con NestJS + TypeScript
-- [ ] **Base de datos** con MongoDB
-- [ ] **Autenticación JWT** con refresh tokens
-- [ ] **Validaciones** robustas
-- [ ] **Manejo de errores** centralizado
+### **Backend (30 minutes)**
+- [ ] **RESTful API** with NestJS + TypeScript
+- [ ] **Database** with MongoDB
+- [ ] **JWT Authentication** with refresh tokens
+- [ ] **Robust validations**
+- [ ] **Centralized error handling**
 
-### **Frontend (25 minutos)**
-- [ ] **React + TypeScript** con hooks modernos
-- [ ] **UI responsiva** con Material-UI
-- [ ] **State management** eficiente
-- [ ] **Formularios** con validación
-- [ ] **Loading states** y error handling
+### **Frontend (25 minutes)**
+- [ ] **React + TypeScript** with modern hooks
+- [ ] **Responsive UI** with Material-UI
+- [ ] **Efficient state management**
+- [ ] **Forms** with validation
+- [ ] **Loading states** and error handling
 
-### **Optimización (5 minutos)**
-- [ ] **Database indexing** estratégico
-- [ ] **API caching** básico
+### **Optimization (5 minutes)**
+- [ ] **Strategic database indexing**
+- [ ] **Basic API caching**
 - [ ] **Frontend optimization**
 
-## 🏗️ **Entidades del Sistema**
+## 🏗️ **System Entities**
 
 ### **User**
 ```typescript
@@ -69,16 +69,16 @@ interface Subscription {
 }
 ```
 
-## 🚀 **Setup Inicial**
+## 🚀 **Initial Setup**
 
 ### **Backend**
 ```bash
-# Crear proyecto NestJS
+# Create NestJS project
 npm i -g @nestjs/cli
 nest new backend
 cd backend
 
-# Instalar dependencias
+# Install dependencies
 npm install @nestjs/mongoose mongoose
 npm install @nestjs/jwt @nestjs/passport passport passport-jwt
 npm install class-validator class-transformer
@@ -88,59 +88,59 @@ npm install --save-dev @types/bcryptjs
 
 ### **Frontend**
 ```bash
-# Crear proyecto React
+# Create React project
 npx create-react-app frontend --template typescript
 cd frontend
 
-# Instalar dependencias
+# Install dependencies
 npm install @mui/material @emotion/react @emotion/styled
 npm install axios react-router-dom
 npm install @types/react-router-dom
 ```
 
-## 📝 **Endpoints Requeridos**
+## 📝 **Required Endpoints**
 
-### **Autenticación**
+### **Authentication**
 - `POST /auth/login` - Login
-- `POST /auth/register` - Registro
+- `POST /auth/register` - Register
 - `POST /auth/refresh` - Refresh token
 
-### **Productos**
-- `GET /products` - Lista paginada
-- `GET /products/:id` - Detalle
-- `POST /products` - Crear (admin)
-- `PUT /products/:id` - Actualizar (admin)
+### **Products**
+- `GET /products` - Paginated list
+- `GET /products/:id` - Details
+- `POST /products` - Create (admin)
+- `PUT /products/:id` - Update (admin)
 
-### **Suscripciones**
-- `GET /subscriptions` - Mis suscripciones
-- `POST /subscriptions` - Crear suscripción
-- `PUT /subscriptions/:id` - Actualizar
-- `POST /subscriptions/:id/pause` - Pausar
-- `POST /subscriptions/:id/cancel` - Cancelar
+### **Subscriptions**
+- `GET /subscriptions` - My subscriptions
+- `POST /subscriptions` - Create subscription
+- `PUT /subscriptions/:id` - Update
+- `POST /subscriptions/:id/pause` - Pause
+- `POST /subscriptions/:id/cancel` - Cancel
 
-## 🎨 **Páginas Frontend**
+## 🎨 **Frontend Pages**
 
-1. **Login/Register** - Autenticación
-2. **Dashboard** - Resumen
-3. **Products** - Catálogo
-4. **My Subscriptions** - Gestión
-5. **Admin Panel** - Gestión productos (admin)
+1. **Login/Register** - Authentication
+2. **Dashboard** - Summary
+3. **Products** - Catalog
+4. **My Subscriptions** - Management
+5. **Admin Panel** - Product management (admin)
 
-## ⚡ **Criterios de Evaluación**
+## ⚡ **Evaluation Criteria**
 
-- **Código (40%)**: Arquitectura, TypeScript, Clean Code
+- **Code (40%)**: Architecture, TypeScript, Clean Code
 - **Backend (30%)**: API Design, Database, Security
 - **Frontend (20%)**: UI/UX, State Management, Performance
-- **Optimización (10%)**: Indexing, Caching, Performance
+- **Optimization (10%)**: Indexing, Caching, Performance
 
-## 🎯 **Puntos Bonus**
+## 🎯 **Bonus Points**
 
-- WebSockets para notificaciones
-- Tests unitarios
+- WebSockets for notifications
+- Unit tests
 - Docker
 - CI/CD pipeline
 - Monitoring
 
 ---
 
-**¡Buena suerte! Recuerda: funcionalidad > perfección.**
+**Good luck! Remember: functionality > perfection.**
