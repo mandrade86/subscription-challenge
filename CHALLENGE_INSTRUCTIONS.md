@@ -1,4 +1,32 @@
-# 🚀 Live Coding Challenge - Detailed Instructions
+# 🚀 Senior Fullstack Developer Assessment - Focus Areas
+
+## 🎯 **Assessment Focus: 6 Key Screening Areas**
+
+This assessment is designed to evaluate candidates on the specific areas where previous candidates have struggled:
+
+### **1. System Design Depth** 
+- Can they design scalable/resilient services without heavy guidance?
+- Do they understand load balancing, microservices, async queues, observability?
+
+### **2. Database Reasoning**
+- Do they understand ACID, scaling strategies, SQL vs. NoSQL trade-offs?
+- Can they justify database choices with specific use cases?
+
+### **3. Scalability & Availability**
+- Can they design for high load and HA in AWS?
+- Do they understand horizontal scaling, caching, multi-AZ deployments?
+
+### **4. Concurrency & Consistency**
+- Can they prevent race conditions, ensure payment/booking integrity?
+- Do they understand transactions, locking, idempotency?
+
+### **5. NestJS Expertise**
+- Beyond coding — do they know how to structure, test, and scale apps in Nest?
+- Do they understand modules, DI, interceptors, guards, exception handling?
+
+### **6. Communication**
+- Can they explain design choices clearly in English?
+- Do they justify technical decisions with trade-offs?
 
 ## 📋 **Initial Setup (5 minutes)**
 
@@ -32,45 +60,54 @@ npm start
 mongod
 ```
 
-## 🎯 **Specific Tasks (55 minutes)**
+## 🎯 **Assessment Tasks (55 minutes)**
 
-### **Backend Tasks (30 minutes)**
+### **Phase 1: System Design & Architecture (20 minutes)**
 
-#### **1. Database Setup (5 min)**
-- [ ] Create schemas for User, Product, Subscription
-- [ ] Configure MongoDB connection
-- [ ] Create basic indexes
+#### **Challenge 1: Scalable Subscription Service Design (10 min)**
+- [ ] Design backend architecture for 1M monthly users
+- [ ] Explain load balancing strategy
+- [ ] Choose between microservices vs modular monolith
+- [ ] Design async event processing for subscription renewals
+- [ ] Plan observability and monitoring
 
-#### **2. Authentication (10 min)**
-- [ ] Implement JWT strategy
-- [ ] Create AuthModule with login/register
-- [ ] Add guards for protected routes
-- [ ] Implement refresh tokens
+#### **Challenge 2: Database Design & Scaling (10 min)**
+- [ ] Choose between PostgreSQL vs MongoDB and justify
+- [ ] Design schema for subscription data with ACID properties
+- [ ] Plan database scaling beyond vertical scaling
+- [ ] Design read/write separation strategy
+- [ ] Plan caching strategy at multiple layers
 
-#### **3. Business Modules (15 min)**
-- [ ] ProductsModule: Basic CRUD
-- [ ] SubscriptionsModule: CRUD + states
-- [ ] Validations with class-validator
-- [ ] Centralized error handling
+### **Phase 2: Concurrency & Reliability (20 minutes)**
 
-### **Frontend Tasks (25 minutes)**
+#### **Challenge 3: Race Condition Prevention (10 min)**
+- [ ] Implement seat reservation for limited subscription slots
+- [ ] Prevent double-booking with proper locking mechanisms
+- [ ] Handle concurrent subscription creation
+- [ ] Implement idempotency for payment processing
+- [ ] Design retry mechanisms for external API calls
 
-#### **1. Base Configuration (5 min)**
-- [ ] Configure routing with React Router
-- [ ] Create AuthContext for global state
-- [ ] Configure axios for API calls
+#### **Challenge 4: Payment Flow Integrity (10 min)**
+- [ ] Design webhook handler with idempotency
+- [ ] Implement saga pattern for multi-step subscription process
+- [ ] Handle partial failures gracefully
+- [ ] Design dead letter queue for failed messages
+- [ ] Implement circuit breaker pattern
 
-#### **2. Main Pages (15 min)**
-- [ ] Login/Register pages
-- [ ] Dashboard with summary
-- [ ] Products page with list
-- [ ] Subscriptions page with management
+### **Phase 3: NestJS Architecture & Implementation (15 minutes)**
 
-#### **3. Components and UX (5 min)**
-- [ ] Loading states
-- [ ] Error handling
-- [ ] Forms with validation
-- [ ] Basic responsive design
+#### **Challenge 5: NestJS Best Practices (10 min)**
+- [ ] Structure large NestJS project with feature modules
+- [ ] Implement global error handling and logging
+- [ ] Design dependency injection strategy
+- [ ] Implement interceptors and guards
+- [ ] Plan testing strategy (unit, integration, e2e)
+
+#### **Challenge 6: AWS Scalability (5 min)**
+- [ ] Design multi-AZ deployment strategy
+- [ ] Plan auto-scaling for traffic spikes
+- [ ] Design failover and disaster recovery
+- [ ] Plan data backup and recovery strategy
 
 ## 📝 **Provided Base Code**
 
@@ -102,25 +139,44 @@ frontend/
 └── public/index.html        ✅ Configured
 ```
 
-## 🎯 **Evaluation Criteria**
+## 🎯 **Evaluation Criteria - 6 Key Areas**
 
-### **Must Have (Pass/Fail)**
-- [ ] **Working Authentication**: Login/Register
-- [ ] **Basic CRUD**: Products and Subscriptions
-- [ ] **Connected Frontend**: API calls working
-- [ ] **Navigation**: Basic routes working
+### **1. System Design Depth (25 points)**
+- [ ] **Architecture Planning** (10 points): Can design scalable system without guidance
+- [ ] **Load Balancing Strategy** (5 points): Understands horizontal scaling, load distribution
+- [ ] **Microservices vs Monolith** (5 points): Can justify choice with trade-offs
+- [ ] **Event Processing** (5 points): Designs async processing for subscription events
 
-### **Should Have (Extra points)**
-- [ ] **Validations**: Backend and frontend
-- [ ] **Error handling**: Try-catch, error boundaries
-- [ ] **Responsive UI**: Material-UI well implemented
-- [ ] **Loading states**: Loading spinners
+### **2. Database Reasoning (20 points)**
+- [ ] **Database Choice Justification** (8 points): PostgreSQL vs MongoDB with specific use cases
+- [ ] **ACID Understanding** (6 points): Demonstrates knowledge of transactions, consistency
+- [ ] **Scaling Strategy** (6 points): Read/write separation, sharding, replication
 
-### **Nice to Have (Bonus)**
-- [ ] **Optimizations**: DB indexes, caching
-- [ ] **Basic tests**: Unit tests
-- [ ] **Documentation**: Updated README
-- [ ] **Docker**: Containerization
+### **3. Scalability & Availability (20 points)**
+- [ ] **AWS Architecture** (8 points): Multi-AZ, auto-scaling, failover strategies
+- [ ] **Caching Strategy** (6 points): Multiple layers, invalidation, performance
+- [ ] **High Availability** (6 points): Disaster recovery, backup strategies
+
+### **4. Concurrency & Consistency (20 points)**
+- [ ] **Race Condition Prevention** (8 points): Proper locking, transactions
+- [ ] **Idempotency Implementation** (6 points): Payment processing, webhook handling
+- [ ] **Error Recovery** (6 points): Retry mechanisms, circuit breakers
+
+### **5. NestJS Expertise (10 points)**
+- [ ] **Project Structure** (4 points): Feature modules, dependency injection
+- [ ] **Error Handling** (3 points): Global exception filters, logging
+- [ ] **Testing Strategy** (3 points): Unit, integration, e2e testing
+
+### **6. Communication (5 points)**
+- [ ] **Technical Explanation** (3 points): Clear explanation of design choices
+- [ ] **Trade-off Analysis** (2 points): Justifies decisions with pros/cons
+
+## 🚨 **Red Flags - Immediate Rejection**
+- ❌ **No concurrency handling** - Will fail in production
+- ❌ **No database justification** - Shows lack of depth
+- ❌ **No scalability consideration** - Cannot handle growth
+- ❌ **Poor NestJS structure** - Lacks framework expertise
+- ❌ **Cannot explain choices** - Communication issues
 
 ## 🚀 **Expected Endpoints**
 
